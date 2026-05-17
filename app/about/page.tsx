@@ -23,7 +23,7 @@ interface ApiResponse {
 // 2. Server-side fetch with graceful error handling
 async function getJourneyData(): Promise<ApiResponse> {
   try {
-    const res = await fetch('http://localhost:5000/api/journey/', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/journey/`, {
       cache: 'no-store',
     });
     

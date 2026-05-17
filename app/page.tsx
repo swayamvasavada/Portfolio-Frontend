@@ -24,7 +24,7 @@ interface Project {
 // 2. Fetch projects and filter ONLY the featured ones
 async function getFeaturedProjects(): Promise<Project[]> {
   try {
-    const res = await fetch('http://localhost:5000/api/project/list', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/project/list`, {
       cache: 'no-store', 
     });
     

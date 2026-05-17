@@ -32,7 +32,7 @@ export default function ContactPage() {
     setSubmitStatus('idle');
 
     try {
-      const res = await fetch('http://localhost:5000/api/lead', { 
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/lead`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -22,7 +22,7 @@ interface Category {
 async function getSkillsData(): Promise<Category[]> {
   try {
     // 'no-store' ensures it fetches fresh data every time during development
-    const res = await fetch('http://localhost:5000/api/category?includeSkills=true', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/category?includeSkills=true`, {
       cache: 'no-store', 
     });
     

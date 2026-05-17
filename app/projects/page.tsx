@@ -23,7 +23,7 @@ interface Project {
 // 2. Server-side fetch function
 async function getProjectsData(): Promise<Project[]> {
   try {
-    const res = await fetch('http://localhost:5000/api/project/list', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/project/list`, {
       cache: 'no-store', // Ensures fresh data is fetched on every request
     });
     

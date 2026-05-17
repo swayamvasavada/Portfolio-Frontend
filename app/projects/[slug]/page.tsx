@@ -36,7 +36,7 @@ async function getProjectDetails(slug: string): Promise<ApiResponse> {
     // Note: If your API strictly requires the ID (e.g., /api/project/11), 
     // you will need to ensure your backend supports querying by the slug string, 
     // OR change this URL to match your backend logic.
-    const res = await fetch(`http://localhost:5000/api/project/${slug}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/project/${slug}`, {
       cache: 'no-store',
     });
 
