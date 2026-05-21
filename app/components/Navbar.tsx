@@ -26,7 +26,7 @@ export default function Navbar() {
                     className="text-2xl font-extrabold tracking-tighter text-white flex items-center gap-2 group"
                 >
                     <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center group-hover:rotate-12 transition-transform shadow-[0_0_15px_rgba(6,182,212,0.5)]">
-                        <span className="text-white text-sm">S</span>
+                        <span className="text-white text-sm text-xl">S</span>
                     </div>
                     Swayam
                 </Link>
