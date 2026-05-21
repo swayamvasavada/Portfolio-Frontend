@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft } from 'react-icons/fa';
 import { MdErrorOutline } from 'react-icons/md';
+import { Metadata } from 'next';
 import DynamicIcon from '../../components/DynamicIcon';
 
 // 1. Interfaces matching your API
@@ -50,6 +51,23 @@ async function getProjectDetails(slug: string): Promise<ApiResponse> {
       result: null
     };
   }
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  
+  // Reuse your existing fetch function here!
+  const apiResponse = await getProjectDetails(slug); 
+  const project = apiResponse.result;
+
+  if (!project) {
+    return { title: "Project Not Found" };
+  }
+
+  return {
+    title: project.projectName,
+    description: project.projectDescription.substring(0, 150) + "...", // Truncate for SEO
+  };
 }
 
 export default async function ProjectDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
