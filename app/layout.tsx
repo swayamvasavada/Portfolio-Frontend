@@ -8,6 +8,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Full-Stack Developer | Portfolio",
   description: "Personal portfolio showcasing full-stack web development, database management, and software engineering projects.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '96x96', type: 'image/x-icon' }
+    ],
+  },
   metadataBase: new URL('https://swayamvasavada.com'),
   openGraph: {
     title: "Software Developer Portfolio",
